@@ -15,25 +15,43 @@ export class Todo extends React.Component {
 				input: e.target.value,
 				myList: this.state.myList.concat(e.target.value)
 			});
-			this.setState({
-				input: ""
-			});
+			this.setState({ input: (e.target.value = "") });
 		}
+	};
+
+	clearItem = i => {
+		let X = this.state.myList;
+		X.splice(i, 1);
+		this.setState({ myList: X });
 	};
 
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<input
 					type="text"
-					className="inputs"
-					placeholder="What needs to be done?"
+					className="inputs shadow"
+					placeholder="  What needs to be done?"
 					onKeyPress={e => this.pressEnter(e)}
 				/>
 
 				{this.state.myList &&
 					this.state.myList.map((listItem, i) => {
-						return <div key={i}>{listItem}</div>;
+						return (
+							<div className="row" key={i}>
+								<div className="col border-bottom spans pt-3">
+									<span className="float-left">
+										{listItem}
+									</span>
+									<span className="float-right">
+										<i
+											className=" pl-1 fas fa-times icons"
+											onClick={() => this.clearItem(i)}
+										/>
+									</span>
+								</div>
+							</div>
+						);
 					})}
 			</div>
 		);

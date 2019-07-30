@@ -6,6 +6,11 @@ export class TodoHead extends React.Component {
 	}
 
 	render() {
-		return <h1>Todos</h1>;
+		return (
+			<h1 className="title mt-5 mb-5 text-light">
+				<mark className="shadow">Todo</mark>
+				-List
+			</h1>
+		);
 	}
 }
