@@ -39,7 +39,7 @@ export class Todo extends React.Component {
 					this.state.myList.map((listItem, i) => {
 						return (
 							<div className="row" key={i}>
-								<div className="col border-bottom spans pt-3">
+								<div className="col border-bottom pb-2 spans pt-3">
 									<span className="float-left">
 										{listItem}
 									</span>
