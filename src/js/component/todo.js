@@ -31,7 +31,7 @@ export class Todo extends React.Component {
 				<input
 					type="text"
 					className="inputs shadow"
-					placeholder="  What needs to be done?"
+					placeholder="  Let's get started!..."
 					onKeyPress={e => this.pressEnter(e)}
 				/>
 
